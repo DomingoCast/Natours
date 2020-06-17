@@ -1,0 +1,119 @@
+.navigation
+    width: 100%
+    overflow: hidden
+    &__button
+        position: fixed
+        top: 4rem
+        right: 4rem
+        z-index: 1000
+        &__label
+            top: 4rem
+            right: 4rem
+            position: fixed
+            z-index: 1000
+
+        &__checkbox
+            opacity: 0
+        &__checkbox:checked +  &__label &__background
+            transform: scale(90)
+        &__text
+            opacity: 0
+            
+        &__raya
+            top: 3rem
+            right: 1.5rem
+
+            &, &::before, &::after
+              position: absolute
+              z-index: 5000
+              width: 3rem
+              border-bottom: 2px solid $color-grey-dark
+              transition: all .2s
+
+            &::before, &::after
+                display: block
+                content: ""
+            &::before
+                top: -.6rem
+            &::after
+                top: .6rem
+
+        &__circle:hover + &__raya::before
+            top: -1rem
+        &__circle:hover + &__raya::after
+            top: 1rem
+
+        &__checkbox:checked + &__label &__raya
+            border: 0
+        &__checkbox:checked + &__label &__raya::before
+            top: 0
+            transform: rotate(225deg)
+        &__checkbox:checked + &__label &__raya::after
+            top: 0
+            transform: rotate(-225deg)
+            
+
+        &__circle
+            position: fixed
+            top: 4rem
+            right: 4rem
+            z-index: 2000
+            display: block
+            width: 6rem
+            height: 6rem
+            border-radius: 100%
+            background: $color-white
+
+        &__background
+            position: fixed
+            top: 4.5rem
+            right: 4.5rem
+            z-index: 1000
+            display: block
+            width: 5rem
+            height: 5rem
+            border-radius: 100%
+            background: radial-gradient($color-primary-light, $color-primary-dark)
+            transition: all .5s 
+    &__button__checkbox:checked ~  &__items
+        display: block
+        opacity: 1
+    &__items
+        display: none
+        opacity: 0
+        position: fixed
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        list-style: none
+        z-index: 1500
+        transition: all .5s 
+        transition-delay: 3s
+
+    &__link
+        &:link, &:visited
+            text-decoration: none
+            color: $color-white
+            text-transform: uppercase
+            margin-bottom: 2rem
+
+        font-size: 3rem
+        font-weight: 300
+        display: inline-block
+        padding: .2rem 2rem
+        background: linear-gradient(120deg,  transparent 0%, transparent 50%, white 50%)
+        background-size: 220%
+        transition: all .2s
+        &:hover
+            background-position: 100%
+            color: $color-primary
+            transform: translateX(2rem)
+            
+
+
+
+    &__item__number
+          display: inline-block
+          margin-right: 2rem
+        
+

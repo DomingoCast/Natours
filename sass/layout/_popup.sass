@@ -1,0 +1,83 @@
+.popup
+    visibility: hidden
+    opacity: 0
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 4000
+    width: 100vw
+    height: 100vh
+    transition: all .3s
+    &:target 
+      opacity: 1
+      visibility: visible
+    &:target &__background
+        opacity: 1
+    &:target &__card
+        transform: translate(-50%, -50%) scale(1)
+
+
+
+    &__x
+        position: absolute
+        z-index: 900000
+        top: 3rem
+        right: 3rem
+        line-height: 1
+        font-size: 3rem
+        &:link, &:visited
+            color: $color-grey-dark
+            text-decoration: none
+        &:hover
+            color: $color-primary
+
+    &__card
+        z-index: 5000
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%) scale(.2)
+        width: 75%
+        //height: 40rem
+        background: white
+        display: table
+        border-radius: 3px
+        overflow: hidden
+        box-shadow: 0 1rem 2rem rgba(black, .4)
+        transition: all .3s .1s
+
+    &__right
+        padding: 0
+        display: table-cell
+        width: 49%
+        vertical-align: middle
+        width: 66.666666666666666666666666666667%
+        padding: 3rem 5rem
+    &__text
+        column-count: 2
+        column-gap: 4rem
+        column-rule: 1px solid $color-grey-light-2
+        font-size: 1.4rem
+
+    &__photo
+        display: table-cell
+        width: 33.333333333333333333333333333333%
+        vertical-align: middle
+        &--1
+            width: 100%
+            display: block
+        &--2
+            width: 100%
+            display: block
+          
+    &__background
+
+      position: fixed
+      z-index: 4000
+      top: 0
+      left: 0
+      height: 100%
+      width: 100%
+      background: rgba(black, .6)
+      opacity: 0
+      transition: all .3s

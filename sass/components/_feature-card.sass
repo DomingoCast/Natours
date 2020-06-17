@@ -1,0 +1,32 @@
+.feature-card
+    width: 100%
+    background-color: $color-white
+    padding: 3rem
+    border-radius: 1rem
+    text-align: center
+    box-shadow: 0 0rem 1.5rem rgba($color-black, 0.2)
+    transition: all 0.2s
+    &__text
+        text-align: left
+        font-size: 1.5rem
+    &__icon 
+        display: inline-block
+        font-size: 6rem
+        margin-bottom: 1rem
+        color: transparent
+        background: linear-gradient(to right, $color-primary-light, $color-primary-dark)
+        -webkit-background-clip: text
+    &:hover
+        transform: translateY(-3rem)
+        //pues no me ha salido
+        //& + *
+            //transform: translateY(-1.2rem)
+
+//.col-1-of-4:hover
+    //& + *
+        //color: red
+
+//div:has(+ div)
+    //color: red
+
+
